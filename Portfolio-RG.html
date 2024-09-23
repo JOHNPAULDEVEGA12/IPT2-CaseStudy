@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Valorant Portfolio</title>
+    <link rel="stylesheet" href="css.css">
+
+    <style>
+        * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: #ff4655;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+
+        /* Header */
+        header {
+            box-shadow: 0 0 5px #111;
+            background-color: #111;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            height: 50px;
+            width: auto;
+            margin-left: 20px;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        header nav ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            padding: 10px;
+            margin: 0;
+        }
+
+        header nav ul li {
+            margin: 5px 10px;
+        }
+
+        header nav a {
+            font-weight: bold;
+            font-size: 15px;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            position: relative;
+        }
+
+        header nav a:hover {
+            color: #ff4655;
+        }
+
+        header nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: #ff4655;
+            transform: scaleX(0);
+            transition: 0.3s;
+        }
+
+        header nav a:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 110vh;
+            background-image: url('valo.jpg');
+            background-size: cover; /* Ensures image covers the entire area */
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            position: relative;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero .overlay {
+            position: absolute;
+            top: 50px;
+        }
+
+        .overlay h1 {
+            font-size: 40px;
+            text-align: left;
+        }
+
+        .overlay .wc {
+            font-size: 40px;
+            text-align: right;
+        }
+
+        .overlay p {
+            padding: 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .overlay h1 .highlight {
+            color: #ff4655;
+            font-weight: bold;
+        }
+
+        .about {
+            padding: 50px;
+            background-color: #222;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .about p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+        }
+
+        h2 {
+            color: #ff4655;
+            font-size:30px;
+            padding-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 50px;
+            background-color:#222;
+            text-align: center;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%; /* Take full width */
+        }
+
+        .contact form .input {
+            width: 100%; /* Ensure input fields and button are full width on mobile */
+            max-width: 400px; /* Limit input width for larger screens */
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact textarea {
+            width: 100%;
+            max-width: 400px;
+            height: 150px;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact button {
+            padding: 10px 20px;
+            background-color: #ff4655;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .contact button:hover {
+            background-color: #e33d4e;
+        }
+
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-links p {
+            color: white;
+            padding-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            margin-bottom: 10px;
+            display: flex;
+            align-items:center;
+        }
+
+        .social-links a:hover {
+            color: #ff4655;
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 5px;
+            background-color: #222;
+            color: white;
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero {
+                align-items: center;
+                text-align: center;
+            }
+
+            .overlay h1, .overlay p {
+                text-align: center;
+                right: 0;
+            }
+
+            .overlay h1 {
+                font-size: 30px;
+            }
+
+            .overlay p {
+                font-size: 18px;
+            }
+
+            .contact form .input, .contact button {
+                max-width: 90%; /* Ensure proper sizing on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .overlay h1 {
+                font-size: 25px;
+            }
+
+            .overlay p {
+                font-size: 16px;
+            }
+
+            header img {
+                height: 40px;
+            }
+
+            .hero {
+                background-attachment: scroll; /* For small screens, background will scroll to avoid lag */
+            }
+
+            .contact form .input, .contact button {
+                max-width: 100%; /* Take full width on very small screens */
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="valoname.png" alt="name">
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#contact">CONTACTS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="welcome" class="hero">
+        <div class="overlay">
+            <h1>Welcome to my</h1>
+            <h1 class="wc"><em><span class="highlight">valorant-themed</span></em> portfolio</h1>
+            <p>Hello everyone, I am Raymond Gallardo!</p>
+        </div>
+    </section>
+    
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>I'm 21 years old, a college student from Tarlac State University(TSU) with the degree of Bachelor of Science in Information Technology. My hobbies are watching anime and playing online games. I love coding as long as the line of codes are working.</p>
+    </section><hr>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Have a project idea or want to connect? Let's chat!</p>
+        
+        <!-- Contact Form -->
+        <form>
+            <input class="input" type="text" placeholder="Your Name" required>
+            <input class="input" type="email" placeholder="Your Email" required>
+            <textarea class="input" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    
+        <!-- Social Links -->
+        <div class="social-links">
+            <p>or visit my social media accounts:</p>
+            <a href="#" target="_blank">
+                <img src="https://th.bing.com/th/id/R.e790c25db5e52838040686612b1a732c?rik=uVuLX4sResGMKA&riu=http%3a%2f%2fpngimg.com%2fuploads%2ffacebook_logos%2ffacebook_logos_PNG19757.png&ehk=JL234rPBfx%2bf3tobhEVbPdNgJiWOhk251WyRwRAg940%3d&risl=&pid=ImgRaw&r=0" alt="Facebook" class="social-icon"> https://www.facebook.com/profile.php?id=100072173991475
+            </a>
+            <a href="#" target="_blank">
+                <img src="https://img.icons8.com/color/1600/gmail.png" alt="Gmail" class="social-icon"> rayzkiegallardo@gmail.com
+            </a>
+        </div>
+    </section>
+
+    <hr>
+    <footer>
+        <p>&copy; 2024 Raymond Gallaro | IPT2-Case Study.</p>
+    </footer>
+
+</body>
+</html>
